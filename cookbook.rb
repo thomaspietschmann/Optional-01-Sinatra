@@ -1,13 +1,9 @@
-# when we iterate over an array of arrays we can "explode" the array and directly access its values
+# frozen_string_literal: true
 
-# array.each do |name, description|
-#   puts...
+require_relative 'recipe'
+require 'csv'
 
-
-require_relative "recipe"
-require "csv"
-
-
+# stores Recipes
 class Cookbook
   def initialize(csv_file_path)
     @csv_file = csv_file_path
@@ -16,7 +12,7 @@ class Cookbook
   end
 
   def all
-    return @recipes
+    @recipes
   end
 
   def add_recipe(recipe)
@@ -33,7 +29,6 @@ class Cookbook
     @recipes[index].done!
     write_csv
   end
-
 
   private
 
