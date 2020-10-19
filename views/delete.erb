@@ -1,0 +1,16 @@
+<h3>Which one would you like to delete?</h3>
+
+<ul>
+<% @recipes.each_with_index do |recipe, index| %>
+<li>
+<%= index + 1 %> - <%= recipe.name %>
+</li>
+<% end %>
+</ul>
+<p>What would you like to delete?</p>
+
+ <form action="/new" method="post">
+      <label for="number">Number</label>
+      <input id="number" name="number"><br>
+    <input class="button-primary" type="submit" value="submit" />
+  </form>
